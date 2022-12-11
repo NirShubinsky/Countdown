@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Countdown</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Video-Background -->
-    <video class="video-background" loop muted autoplay>\
+    <video class="video-background" loop muted autoplay>
         <source src="time.mp4">
     </video>
-    <div class="video-overlay"></div>
+    <div class="video-overlay">
+        <p class="credits">Created & Developed by Nir Shubinsky <a href="https://github.com/NirShubinsky" target="_blank" title="GitHub"><i class="fab fa-github">&nbsp;</i></a><a href="https://www.linkedin.com/in/nir-shubinsky-b7a176b1/" target="_blank" title="Linkedln"><i class="fab fa-linkedin"></i></a></p>
+    </div>
     <!-- Container -->
     <div class="container">
         <!-- input -->
         <div class="input-container" id="input-container">
             <h1>Create a custom countdown</h1>
             <form class="form" id="countdownForm">
-                 <label for="title">Title</label>
+                 <label for="title">Countdown Title:</label>
                  <input type="text" id="title" placeholder="What are you counting for?"></input>
-                 <label for="date-picker">Please select a date.</label>
+                 <label for="date-picker">Please select a date:</label>
                  <input type="date" id="date-picker">
                  <button type="submit">Submit</button>
             </form>
+        </div>
             <!-- Coundown -->
             <div class="countdown" id="countdown" hidden>
-                <h1 class="countdown-title"></h1>
+                <h1 id="countdown-title"></h1>
                 <ul>
                     <li><span></span>Days</li>
                     <li><span></span>Hours</li>
@@ -38,11 +42,12 @@
             <!-- Complete -->
             <div class="complete" id="complete" hidden>
                 <h1 class="complete-title">Countdown Complete!</h1>
-                <h1 id="complete-info">Countdown finished on 05-05-2023!</h1>
+                <h1 id="complete-info"></h1>
                 <button id="complete-button">New Countdown</button>
             </div>
-        </div>
+            
     </div>
+    
     <!-- Script -->
     <script src="script.js"></script>
 </body>
